@@ -1,0 +1,24 @@
+Step 1: Clone the Git Repository
+
+git clone <repository_url>
+cd <repository_directory>
+
+Step 2: Checkout the Master Branch
+
+git checkout master
+
+Step 3: Identify the Commit to Revert
+
+git log
+
+Step 4: Revert the Commit
+
+git revert <commit_hash>
+
+Step 5: Commit the Revert
+
+git commit -m "Revert <commit_hash>"
+
+Step 6: Push the Changes to the Remote Repository
+
+git push origin master
