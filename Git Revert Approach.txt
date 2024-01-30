@@ -1,0 +1,63 @@
+####################################################################################################################################################
+APPROACH 1: git reset 
+
+
+Step 1: Clone the Git Repository
+Open Visual Studio Code and open the terminal.
+
+git clone <repository_url>
+cd <repository_directory>
+
+Step 2: Identify the Commit to Revert
+Use the following command to view the commit history and find the commit hash that you want to revert.
+
+git log
+
+Step 3: Revert the Commit Using git reset
+Replace <commit_hash> with the actual commit hash you want to revert. This command will reset your branch pointer to the specified commit, effectively "undoing" the commits after it.
+
+Copy code
+
+git reset --hard <commit_hash>
+
+
+Step 4: Force Push to Remote Repository
+####Be cautious with this step as it rewrites history. If the branch you're working on is shared with others, make sure they are aware of the changes.
+
+git push origin master --force
+
+########################################################################################################################################################
+APPROACH 2: git REVERT
+
+Step 1: Clone the Git Repository
+
+git clone <repository_url>
+cd <repository_directory>
+
+Step 2: Checkout the Master Branch
+
+git checkout master
+
+Step 3: Identify the Commit to Revert
+
+git log
+
+Step 4: Revert the Commit
+
+git revert <commit_hash>
+
+-----------------
+
+git revert -n <oldest_commit_hash>^..<latest_commit_hash>
+
+
+Step 5: Commit the Revert
+
+git commit -m "Revert <commit_hash>"
+
+Step 6: Push the Changes to the Remote Repository
+
+git push origin master
+
+
+########################################################################################################################################################
